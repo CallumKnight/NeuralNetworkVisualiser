@@ -1,18 +1,30 @@
 #include "Network.h"
 
 #define DEFAULT_NUM_LAYERS 5
-#define LAYER_SPACING 30
+#define LAYER_SPACING 40
 
 //--------------------------------------------------------------
 Network::Network(){
 
-    numLayers = DEFAULT_NUM_LAYERS;
-    layers.resize(numLayers);
+    layers.resize(DEFAULT_NUM_LAYERS);
 }
 
 //--------------------------------------------------------------
 Network::~Network(){
 
+}
+
+//--------------------------------------------------------------
+void Network::setup(std::vector<uint8_t> layerSizes){
+
+    layers.resize(layerSizes.size());
+
+    uint8_t index = 0;
+
+    for(uint8_t size : layerSizes){
+        layers[index].setup(size);
+        index++;
+    }
 }
 
 //--------------------------------------------------------------

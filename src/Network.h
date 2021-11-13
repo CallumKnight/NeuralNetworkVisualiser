@@ -8,12 +8,12 @@ class Network{
 	public:
 		Network();
 		~Network();
+		void setup(std::vector<uint8_t> layerSizes);
 		void update();
 		void draw(float x, float y);
 
 	private:
 		float xPos;
 		float yPos;
-		uint8_t numLayers;
 		std::vector<Layer> layers;
 };

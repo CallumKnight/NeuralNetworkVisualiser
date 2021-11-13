@@ -1,18 +1,23 @@
 #include "Layer.h"
 
 #define DEFAULT_NUM_NODES 5
-#define NODE_SPACING 10
+#define NODE_SPACING 15
 
 //--------------------------------------------------------------
 Layer::Layer(){
 
-    numNodes = DEFAULT_NUM_NODES;
-    nodes.resize(numNodes);
+    nodes.resize(DEFAULT_NUM_NODES);
 }
 
 //--------------------------------------------------------------
 Layer::~Layer(){
 
+}
+
+//--------------------------------------------------------------
+void Layer::setup(uint8_t size){
+
+    nodes.resize(size);
 }
 
 //--------------------------------------------------------------

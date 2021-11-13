@@ -7,6 +7,7 @@ class Node{
 	public:
 		Node();
 		~Node();
+		void setup();
 		void update();
 		void draw(float x, float y);
 		uint8_t getRadius();
