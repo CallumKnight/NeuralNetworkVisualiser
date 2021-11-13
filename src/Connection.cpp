@@ -34,7 +34,5 @@ void Connection::draw(float xStart, float yStart, float xEnd, float yEnd){
     yPosEnd = yEnd;
 
     ofSetColor(colour);
-    ofPolyline();
-
-
+    ofDrawLine(xPosStart, yPosStart, xPosEnd, yPosEnd);
 }

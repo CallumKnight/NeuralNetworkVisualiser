@@ -17,4 +17,5 @@ class Connection{
 		float yPosStart;
 		float xPosEnd;
 		float yPosEnd;
+		uint8_t colour;
 };

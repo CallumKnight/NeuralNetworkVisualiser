@@ -1,7 +1,7 @@
 #include "Layer.h"
 
 #define DEFAULT_NUM_NODES 5
-#define NODE_SPACING 15
+#define NODE_SPACING 20
 
 //--------------------------------------------------------------
 Layer::Layer(){
@@ -33,7 +33,7 @@ void Layer::draw(float x, float y){
 
     float offset = 0;
 
-    for(Node node : nodes){
+    for(Node &node : nodes){
         node.draw(xPos, yPos + offset);
         offset += (2*node.getRadius()) + NODE_SPACING;
     }
@@ -43,4 +43,10 @@ void Layer::draw(float x, float y){
 uint8_t Layer::getWidth(){
 
     return 2*nodes[0].getRadius();
+}
+
+//--------------------------------------------------------------
+std::vector<Node> Layer::getNodes(){
+
+    return nodes;
 }

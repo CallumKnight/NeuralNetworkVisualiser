@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 
-    std::vector<uint8_t> layerSizes{3, 5, 5, 4};
+    std::vector<uint8_t> layerSizes{3, 7, 6, 4};
     network.setup(layerSizes);
 }
 
@@ -15,7 +15,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 
-    network.draw(ofGetWidth()/2, ofGetHeight()/2);
+    network.draw(100, 100);
 }
 
 //--------------------------------------------------------------

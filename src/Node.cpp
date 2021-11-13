@@ -42,3 +42,15 @@ uint8_t Node::getRadius(){
 
     return radius;
 }
+
+//--------------------------------------------------------------
+float Node::getXPos(){
+
+    return xPos;
+}
+
+//--------------------------------------------------------------
+float Node::getYPos(){
+
+    return yPos;
+}

@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "Layer.h"
+#include "Connection.h"
 
 class Network{
 
@@ -16,4 +17,5 @@ class Network{
 		float xPos;
 		float yPos;
 		std::vector<Layer> layers;
+		std::vector<std::vector<std::vector<Connection>>> connectionsTensor;
 };

@@ -12,6 +12,7 @@ class Layer{
 		void update();
 		void draw(float x, float y);
 		uint8_t getWidth();
+		std::vector<Node> getNodes();
 
 	private:
 		float xPos;
