@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "Network.h"
+#include "NeuralNetwork.h"
 
 class ofApp : public ofBaseApp{
 
@@ -23,5 +23,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 	
 	private:
-		Network network;
+		NeuralNetwork* neuralNetwork = nullptr;
+		std::vector<RowVector*> inputData;
+		std::vector<RowVector*> outputData;
 };

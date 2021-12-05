@@ -3,8 +3,16 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 
-    std::vector<uint8_t> layerSizes{3, 7, 6, 4};
-    network.setup(layerSizes);
+    // Initialise training data
+    genData("test");
+    ReadCSV("test-in", inputData);
+    ReadCSV("test-out", outputData);
+    
+    // Initialise neural network
+    neuralNetwork = new NeuralNetwork({2, 3, 1});
+
+    // Train the network
+    neuralNetwork->train(inputData, outputData);
 }
 
 //--------------------------------------------------------------
@@ -15,7 +23,7 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 
-    network.draw(100, 100);
+    neuralNetwork->draw();
 }
 
 //--------------------------------------------------------------

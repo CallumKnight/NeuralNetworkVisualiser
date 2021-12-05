@@ -19,6 +19,7 @@ Scalar activationFunctionDerivative(Scalar x);
 class NeuralNetwork
 {
 	public:
+		NeuralNetwork();
 		NeuralNetwork(std::vector<uint> topology, Scalar learningRate = Scalar(DEFAULT_LEARNING_RATE));
 		~NeuralNetwork();
 		void propagateForward(RowVector& input);	// Performs forward propagation of data
@@ -27,9 +28,9 @@ class NeuralNetwork
 		void updateWeights();						// Updates weights of connections
 		void train(std::vector<RowVector*> input_data, std::vector<RowVector*> output_data);	// Trains neural network given an array of data points
 
-		// void setup();
+		// void setup(std::vector<uint> topology, Scalar learningRate = Scalar(DEFAULT_LEARNING_RATE));
 		// void update();
-		// void draw();
+		void draw();
 
 	private:
 		std::vector<uint> topology;					// Stores the layer sizes of the neural network

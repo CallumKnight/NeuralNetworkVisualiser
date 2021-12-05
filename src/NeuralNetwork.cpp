@@ -16,7 +16,7 @@ void genData(std::string filename)
     {
         Scalar x = rand() / Scalar(RAND_MAX);
         Scalar y = rand() / Scalar(RAND_MAX);
-        file1 << x << ", " << y << std::endl;
+        file1 << x << "," << y << std::endl;
         file2 << 2 * x + 10 + y << std::endl;
     }
     
@@ -38,7 +38,7 @@ void ReadCSV(std::string filename, std::vector<RowVector*>& data)
     std::stringstream ss(line);
     std::vector<Scalar> parsed_vec;
 
-    while(std::getline(ss, word, ', '))
+    while(std::getline(ss, word, ','))
     {
         parsed_vec.push_back(Scalar(std::stof(&word[0])));
     }
@@ -61,7 +61,7 @@ void ReadCSV(std::string filename, std::vector<RowVector*>& data)
             data.push_back(new RowVector(1, cols));
 
             uint i = 0;
-            while(std::getline(ss, word, ', '))
+            while(std::getline(ss, word, ','))
             {
                 data.back()->coeffRef(i) = Scalar(std::stof(&word[0]));
                 i++;
@@ -256,7 +256,10 @@ void NeuralNetwork::train(std::vector<RowVector*> input_data, std::vector<RowVec
 
 // }
 
-// //--------------------------------------------------------------
-// void NeuralNetwork::draw(){
+//--------------------------------------------------------------
+void NeuralNetwork::draw(){
 
-// }
+    // Draw something simple to screen
+    ofSetColor(255);
+    ofDrawCircle(ofGetWidth()/2, ofGetHeight()/2, 10);
+}
