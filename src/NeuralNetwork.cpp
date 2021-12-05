@@ -175,13 +175,13 @@ void NeuralNetwork::propagateForward(RowVector& input)
     {
         // Perform dot product of neuron layers with weights matrix
         (*neuronLayers[i]) = (*neuronLayers[i - 1]) * (*weights[i - 1]);
-    }
- 
-    // Apply activation function to all neurons within each layer (excl. bias neuron)
-    // Note: unaryExpr applies the given function to all elements of the vector
-    for(uint i = 1; i < topology.size() - 1; i++)
-    {
-        neuronLayers[i]->block(0, 0, 1, topology[i]).unaryExpr(std::ptr_fun(activationFunction));
+    
+        // Apply activation function to all neurons within each layer (excl. bias neuron)
+        // Note: unaryExpr applies the given function to all elements of the vector
+        for(uint i = 1; i < topology.size() - 1; i++)
+        {
+            neuronLayers[i]->block(0, 0, 1, topology[i]).unaryExpr(std::ptr_fun(activationFunction));
+        }
     }
 }
 
